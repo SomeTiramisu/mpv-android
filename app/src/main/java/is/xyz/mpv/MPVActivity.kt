@@ -264,8 +264,10 @@ class MPVActivity : AppCompatActivity(), MPVLib.EventObserver, TouchGesturesObse
 
     private fun copyAssets() {
         val assetManager = applicationContext.assets
-        val files = arrayOf("subfont.ttf", "cacert.pem")
+        val files = arrayOf("subfont.ttf", "cacert.pem", "fonts/verdana.ttf", "fonts/verdanab.ttf", "fonts/verdanai.ttf", "fonts/verdanaz.ttf", )
         val configDir = applicationContext.filesDir.path
+        val fontsFileDir = File("$configDir/fonts")
+        fontsFileDir.mkdirs()
         for (filename in files) {
             var ins: InputStream? = null
             var out: OutputStream? = null
